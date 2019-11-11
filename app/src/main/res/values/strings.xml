@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DIY Halloween Costume</string>
+    <string name="title_activity_add_costume">Add Costume</string>
+    <string name="name_hint">Costume Name</string>
+    <string name="btnAddItem">Add Item</string>
+    <string name="item_hint">Item Needed</string>
+    <string name="lblItems">Items Needed:</string>
+    <string name="notes_hint">Notes</string>
+    <string name="btnAddCostume">Add Costume</string>
 </resources>
