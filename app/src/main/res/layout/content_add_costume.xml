@@ -12,7 +12,7 @@
         android:id="@+id/txtLayoutName"
         android:layout_width="318dp"
         android:layout_height="53dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/name_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -39,14 +39,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtLayoutListItem"
-        android:layout_width="130dp"
+        android:layout_width="243dp"
         android:layout_height="52dp"
-        android:layout_marginTop="32dp"
         android:hint="@string/item_hint"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgCamera">
+        app:layout_constraintTop_toBottomOf="@+id/lblItemsNeeded"
+        app:layout_constraintVertical_bias="0.6">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtListItem"
@@ -63,27 +64,30 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/txtLayoutListItem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txtLayoutListItem"
-        app:layout_constraintTop_toTopOf="@+id/txtLayoutListItem" />
+        app:layout_constraintTop_toTopOf="@+id/txtLayoutListItem"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/lblItemsNeeded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="@string/lblItems"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLayoutListItem" />
+        app:layout_constraintTop_toBottomOf="@+id/imgCamera" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="409dp"
+        android:layout_height="63dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblItemsNeeded">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutListItem"
+        tools:layout_editor_absoluteY="359dp">
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -91,10 +95,10 @@
         android:id="@+id/txtLayoutNotes"
         android:layout_width="375dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:hint="@string/notes_hint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup">
 
