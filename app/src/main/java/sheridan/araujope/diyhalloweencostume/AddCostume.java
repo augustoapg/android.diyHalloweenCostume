@@ -18,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,21 +60,41 @@ public class AddCostume extends AppCompatActivity {
         mBtnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String itemName = mItemName.getText().toString().trim();
-
-                if (itemName != null && !itemName.isEmpty()) {
-                    Chip chip = new Chip(AddCostume.this);
-                    chip.setText(itemName);
-                    chip.setCloseIconEnabled(true);
-                    chip.setCheckable(false);
-                    chip.setClickable(false);
-                    chip.setIconStartPadding(10);
-                    mChipGroup.addView(chip);
-
-                    mItemName.setText("");
-                }
+                addNewItem();
             }
         });
+        
+        mBtnSaveCostume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveCostume();
+            }
+        });
+    }
+
+    private void saveCostume() {
+    }
+
+    private void addNewItem() {
+        String itemName = mItemName.getText().toString().trim();
+
+        if (itemName != null && !itemName.isEmpty()) {
+            final Chip chip = new Chip(AddCostume.this);
+            chip.setText(itemName);
+            chip.setCloseIconEnabled(true);
+            chip.setCheckable(false);
+            chip.setClickable(false);
+            chip.setIconStartPadding(10);
+            chip.setOnCloseIconClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mChipGroup.removeView(chip);
+                }
+            });
+            mChipGroup.addView(chip);
+
+            mItemName.setText("");
+        }
     }
 
     private void addImageClickHandler() {
@@ -83,7 +104,8 @@ public class AddCostume extends AppCompatActivity {
                 Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
                 getIntent.setType("image/*");
 
-                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent pickIntent = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 pickIntent.setType("image/*");
 
                 Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
