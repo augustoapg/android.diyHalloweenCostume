@@ -1,20 +1,25 @@
+/**
+ * Project: DIY Halloween Costume
+ * Author: Augusto A P Goncalez
+ * Date: Nov. 18, 2019
+ */
+
 package sheridan.araujope.diyhalloweencostume.beans;
 
-import android.graphics.Bitmap;
-
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class Costume {
+public class Costume implements Serializable {
     private String name;
-    private Bitmap image;
+    private String image;
     private List<String> items;
     private String notes;
 
     public Costume() {
     }
 
-    public Costume(String name, Bitmap image, List<String> items, String notes) {
+    public Costume(String name, String image, List<String> items, String notes) {
         this.name = name;
         this.image = image;
         this.items = items;
@@ -29,11 +34,11 @@ public class Costume {
         this.name = name;
     }
 
-    public Bitmap getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

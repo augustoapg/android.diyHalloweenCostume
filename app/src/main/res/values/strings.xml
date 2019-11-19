@@ -7,4 +7,6 @@
     <string name="lblItems">Items Needed:</string>
     <string name="notes_hint">Notes</string>
     <string name="btnAddCostume">Add Costume</string>
+    <string name="no_name_error">Please add a Costume Name</string>
+    <string name="lblItemsNeeded">Items Needed:</string>
 </resources>
